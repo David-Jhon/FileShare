@@ -1,0 +1,27 @@
+{
+  "name": "file-sharing",
+  "version": "1.0.2",
+  "description": "TypeScript-based file sharing website with expiration",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/server.js",
+    "dev": "tsc --watch & nodemon dist/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.1",
+    "@types/express-session": "^1.18.1",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.3",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2"
+  }
+}

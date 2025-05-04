@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileShare - Secure File Sharing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FileShare</h1>
+      <p>Securely share files with ease</p>
+      <div class="user-info">
+        <span id="username"></span>
+        <button type="button" onclick="logout()" class="logout-btn">Logout</button>
+      </div>
+    </header>
+    <div class="upload-area" id="uploadArea">
+      <p>Drag and drop files here or</p>
+      <div class="upload-controls">
+        <input type="file" id="fileInput" style="display: none;">
+        <button type="button" onclick="document.getElementById('fileInput').click()" class="select-btn">Select File</button>
+        <span id="fileName" class="file-name">No file selected</span>
+        <select id="expireSelect">
+          <option value="10m">10 Minutes</option>
+          <option value="1h">1 Hour</option>
+          <option value="10h">10 Hours</option>
+          <option value="1d">1 Day</option>
+          <option value="1m">1 Month</option>
+          <option value="Never" selected>Never</option>
+        </select>
+        <button type="button" onclick="uploadSelectedFile()" class="upload-btn">Upload File</button>
+        <div class="progress-container">
+          <progress id="uploadProgress" value="0" max="100"></progress>
+          <span id="progressText">0%</span>
+        </div>
+      </div>
+    </div>
+    <section class="file-list">
+      <h2>Public Files</h2>
+      <ul id="fileList"></ul>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

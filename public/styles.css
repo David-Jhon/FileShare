@@ -1,0 +1,277 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  margin: 0;
+  padding: 2vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  flex: 1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4vh;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin: 0;
+  color: #00aaff;
+}
+
+p {
+  color: #aaaaaa;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1vh;
+}
+
+.logout-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.logout-btn:hover {
+  background-color: #cc3333;
+}
+
+.login-area {
+  background-color: #2a2a2a;
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 4vw;
+  text-align: center;
+  margin-bottom: 4vh;
+}
+
+.login-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.login-controls input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-btn {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.login-btn:hover {
+  background-color: #0088cc;
+}
+
+.error {
+  color: #ff4444;
+  margin: 0;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.upload-area {
+  background-color: #2a2a2a;
+  border: 2px dashed #444;
+  border-radius: 10px;
+  padding: 4vw;
+  text-align: center;
+  margin-bottom: 4vh;
+  transition: border-color 0.3s;
+}
+
+.upload-area.dragover {
+  border-color: #00aaff;
+  background-color: #333;
+}
+
+.upload-area p {
+  margin: 0 0 2vh;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+.upload-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-btn, .upload-btn {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  touch-action: manipulation;
+}
+
+.select-btn:hover, .upload-btn:hover {
+  background-color: #0088cc;
+}
+
+.upload-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+.progress-container {
+  margin-top: 10px;
+  display: none;
+}
+
+.progress-container.visible {
+  display: block;
+}
+
+.file-name {
+  color: #aaaaaa;
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  min-width: 120px;
+}
+
+.file-list {
+  margin-top: 2vh;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #2a2a2a;
+  padding: 1.5vh 2vw;
+  margin: 1vh 0;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+a {
+  color: #00aaff;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.delete-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  touch-action: manipulation;
+}
+
+.delete-btn:hover {
+  background-color: #cc3333;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .container {
+    max-width: 95vw;
+  }
+
+  .upload-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .select-btn, .upload-btn, select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .file-name {
+    max-width: 80vw;
+    text-align: center;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  body {
+    padding: 3vw;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .upload-area, .login-area {
+    padding: 5vw;
+  }
+
+  .upload-area p {
+    font-size: clamp(0.8rem, 4vw, 0.9rem);
+  }
+}

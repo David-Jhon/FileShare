@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# TypeScript
+dist/
+build/
+*.js
+*.js.map
+
+# SQLite Databases
+files.db
+users.db
+
+# Uploads Directory
+uploads/
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Miscellaneous
+*.bak
+*.swp
